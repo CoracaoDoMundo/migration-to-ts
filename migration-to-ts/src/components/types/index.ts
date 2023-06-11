@@ -62,7 +62,7 @@ type Country =
 
 type SourceId = { id: string; name: string };
 
-type Source = {
+export type Source = {
   id: string;
   name: string;
   description: string;
@@ -95,9 +95,19 @@ export type DataNews = {
   }[],
 };
 
+export type DataDraw = {
+  category: Category,
+  country: Country,
+  description: string,
+  id: string,
+  language: Language,
+  name: string,
+  url: string,
+}
+
 export type DataSources = {
   status: string,
-  sources: Source,
+  sources: DataDraw[],
 };
 
 export interface Response {
