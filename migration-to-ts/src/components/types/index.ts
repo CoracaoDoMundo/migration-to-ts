@@ -72,6 +72,14 @@ type Source = {
   country: Country;
 };
 
+export type LoadCallback = (data: DataNews) => void;
+
+export type Options = { [apiKey: string]: string };
+
+export type RespOptions = { endpoint: string; options?: Options };
+
+export type RespCallback = () => void;
+
 export type DataNews = {
   status: string,
   totalResults: number,

@@ -1,6 +1,4 @@
-type Options = { [apiKey: string]: string };
-type RespOptions = { endpoint: string; options?: Options };
-type RespCallback = () => void;
+import { LoadCallback, Options, RespOptions, RespCallback, DataNews } from '../types/index';
 
 abstract class Loader {
   private baseLink: string;
@@ -41,12 +39,12 @@ abstract class Loader {
     return url.slice(0, -1);
   }
 
-  load(method: string = 'GET', endpoint: string, callback: Function, options: Options) {
+  load(method: string = 'GET', endpoint: string, callback: LoadCallback, options: Options) {
     fetch(this.makeUrl(options, endpoint), { method })
       .then(this.errorHandler)
-      .then((res) => res.json())
-      .then((data) => callback(data))
-      .catch((err) => console.error(err));
+      .then((res: Response) => res.json())
+      .then((data: DataNews) => callback(data))
+      .catch((err: Error) => console.error(err));
   }
 }
 
