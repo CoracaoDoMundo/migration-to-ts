@@ -62,6 +62,17 @@ type Country =
 
 type SourceId = { id: string; name: string };
 
+export type Article = {
+  author: string,
+  content: string,
+  description: string,
+  publishedAt?: string,
+  source: SourceId,
+  title: string,
+  url: string,
+  urlToImage: string,
+};
+
 export type Source = {
   id: string;
   name: string;
@@ -83,16 +94,7 @@ export type RespCallback = () => void;
 export type DataNews = {
   status: string,
   totalResults: number,
-  articles: {
-    author?: string,
-    content?: string,
-    description?: string,
-    publishedAt?: string,
-    source?: SourceId,
-    title?: string,
-    url?: string,
-    urlToImage?: string,
-  }[],
+  articles: Article[] | [],
 };
 
 export type DataDraw = {

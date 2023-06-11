@@ -1,6 +1,6 @@
 import Loader from './loader';
 
-class AppLoader extends Loader {
+abstract class AppLoader extends Loader {
   constructor() {
     super('https://news-proxy.spanb4.shop/', {
       apiKey: 'dea2647f6bd441ecaa6fc9eeda9bf47d', // получите свой ключ https://newsapi.org/

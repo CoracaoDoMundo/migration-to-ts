@@ -2,7 +2,7 @@ import './sources.css';
 import { DataDraw } from '../../types/index';
 
 class Sources {
-  draw(data: DataDraw[]) {
+  public draw(data: DataDraw[]) {
     const fragment: DocumentFragment = document.createDocumentFragment();
     const sourceItemTemp: HTMLTemplateElement = document.querySelector('#sourceItemTemp')!;
 
