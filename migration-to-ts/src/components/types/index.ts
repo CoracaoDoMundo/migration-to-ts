@@ -60,6 +60,8 @@ type Country =
   | 've'
   | 'za';
 
+type SourceId = { id: string; name: string };
+
 type Source = {
   id: string;
   name: string;
@@ -68,6 +70,26 @@ type Source = {
   category: Category;
   language: Language;
   country: Country;
+};
+
+export type DataNews = {
+  status: string,
+  totalResults: number,
+  articles: {
+    author?: string,
+    content?: string,
+    description?: string,
+    publishedAt?: string,
+    source?: SourceId,
+    title?: string,
+    url?: string,
+    urlToImage?: string,
+  }[],
+};
+
+export type DataSources = {
+  status: string,
+  sources: Source,
 };
 
 export interface Response {
