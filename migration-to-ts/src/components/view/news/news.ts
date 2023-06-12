@@ -16,7 +16,7 @@ class News {
       if (idx % 2) newsItem.classList.add('alt');
 
       const metaPhoto: HTMLDivElement = newsClone.querySelector('.news__meta-photo')!;
-      metaPhoto.style.backgroundImage = `url(${newsPic})`;
+      metaPhoto.style.backgroundImage = `url(${item.urlToImage || newsPic})`;
       const metaAuthor: HTMLLIElement = newsClone.querySelector('.news__meta-author')!;
       if (item.source) {
         metaAuthor.textContent = item.author ? item.author : item.source.name;
