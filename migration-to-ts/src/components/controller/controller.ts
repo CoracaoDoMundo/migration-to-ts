@@ -36,9 +36,9 @@ class AppController extends AppLoader {
         return;
       }
 
-      if (target instanceof HTMLDivElement) {
+      // if (target instanceof HTMLDivElement) {
         target = target.parentNode as HTMLDivElement;
-      }
+      // }
     }
   }
 }
