@@ -62,17 +62,6 @@ type Country =
 
 type SourceId = { id: string; name: string };
 
-export type Article = {
-  author: string,
-  content: string,
-  description: string,
-  publishedAt?: string,
-  source: SourceId,
-  title: string,
-  url: string,
-  urlToImage: string,
-};
-
 export type Source = {
   id: string;
   name: string;
@@ -83,13 +72,24 @@ export type Source = {
   country: Country;
 };
 
-export type LoadCallback = (data: DataNews) => void;
+export type DataCallback = (data: DataNews) => void;
+
+export type SourcesCallback = (data: DataSources) => void;
 
 export type Options = { [apiKey: string]: string };
 
 export type RespOptions = { endpoint: string; options?: Options };
 
-export type RespCallback = () => void;
+export type Article = {
+  author: string,
+  content: string,
+  description: string,
+  publishedAt: string,
+  source: SourceId,
+  title: string,
+  url: string,
+  urlToImage: string,
+};
 
 export type DataNews = {
   status: string,

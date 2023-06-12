@@ -1,4 +1,4 @@
-import { LoadCallback, Options, RespOptions, RespCallback, DataNews } from '../types/index';
+import { Options, RespOptions, DataNews, DataSources } from '../types/index';
 
 abstract class Loader {
   private baseLink: string;
@@ -9,9 +9,9 @@ abstract class Loader {
     this.options = options;
   }
 
-  protected getResp(
+  protected getResp<T extends DataNews | DataSources>(
     { endpoint, options = {} }: RespOptions,
-    callback: RespCallback = () => {
+    callback: (data: T) => void = () => {
       console.error('No callback for GET response');
     },
   ) {
@@ -39,11 +39,11 @@ abstract class Loader {
     return url.slice(0, -1);
   }
 
-  private load(method: string = 'GET', endpoint: string, callback: LoadCallback, options: Options) {
+  private load<T extends DataNews | DataSources>(method: string = 'GET', endpoint: string, callback: (data: T) => void, options: Options) {
     fetch(this.makeUrl(options, endpoint), { method })
       .then(this.errorHandler)
       .then((res: Response) => res.json())
-      .then((data: DataNews) => callback(data))
+      .then((data: T) => callback(data))
       .catch((err: Error) => console.error(err));
   }
 }
