@@ -14,6 +14,13 @@ const baseConfig = {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.(svg|ico)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: path.join('components', 'view', 'svg', '[name].[ext]'),
+        },
+      },
     ],
   },
   resolve: {

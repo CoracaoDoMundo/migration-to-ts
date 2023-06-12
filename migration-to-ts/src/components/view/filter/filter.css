@@ -1,0 +1,13 @@
+.filter {
+  width: 97%;
+}
+
+.sources-filter {
+  background-color: transparent;
+  margin: 0.5em;
+  padding: 1em;
+  width: 20%;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid #f130ff;
+}

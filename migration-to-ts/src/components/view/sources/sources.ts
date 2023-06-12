@@ -1,4 +1,5 @@
 import './sources.css';
+import '../filter/filter.css';
 import { DataDraw } from '../../types/index';
 
 class Sources {
