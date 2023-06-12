@@ -4,6 +4,7 @@
   justify-content: space-between;
   width: 97%;
   max-height: 63vh;
+  height: 480px;
   overflow: auto;
   align-items: center;
   font: 300 1em 'Fira Sans', sans-serif;
@@ -71,3 +72,9 @@
     max-height: 62vh;
   }
 }
+
+@media (max-width: 320px) {
+    .sources {
+      height: 200px;
+    }
+  }

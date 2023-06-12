@@ -15,10 +15,17 @@ const baseConfig = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(svg|ico)$/,
+        test: /\.(svg|ico)$/i,
         type: 'asset/resource',
         generator: {
           filename: path.join('components', 'view', 'svg', '[name].[ext]'),
+        },
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: path.join('components', 'view', 'img', '[name].[ext]'),
         },
       },
     ],

@@ -1,4 +1,5 @@
 import './news.css';
+import newsPic from '../img/news-pic.jpg';
 import { Article } from '../../types/index';
 
 class News {
@@ -15,7 +16,7 @@ class News {
       if (idx % 2) newsItem.classList.add('alt');
 
       const metaPhoto: HTMLDivElement = newsClone.querySelector('.news__meta-photo')!;
-      metaPhoto.style.backgroundImage = `url(${item.urlToImage || 'img/news_placeholder.jpg'})`;
+      metaPhoto.style.backgroundImage = `url(${newsPic})`;
       const metaAuthor: HTMLLIElement = newsClone.querySelector('.news__meta-author')!;
       if (item.source) {
         metaAuthor.textContent = item.author ? item.author : item.source.name;
