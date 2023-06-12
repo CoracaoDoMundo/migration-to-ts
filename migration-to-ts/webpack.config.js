@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const baseConfig = {
   devtool: 'eval-source-map',
-  entry: path.join(__dirname, 'src', 'index.js'),
+  entry: path.join(__dirname, 'src', 'index.ts'),
   mode: 'development',
   module: {
     rules: [
