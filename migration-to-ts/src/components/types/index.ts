@@ -62,7 +62,7 @@ type Country =
 
 type SourceId = { id: string; name: string };
 
-export type Source = {
+export interface Source {
   id: string;
   name: string;
   description: string;
@@ -70,7 +70,7 @@ export type Source = {
   category: Category;
   language: Language;
   country: Country;
-};
+}
 
 export type DataCallback = (data: DataNews) => void;
 
@@ -78,48 +78,51 @@ export type SourcesCallback = (data: DataSources) => void;
 
 export type Options = { [apiKey: string]: string };
 
-export type RespOptions = { endpoint: string; options?: Options };
-
-export type Article = {
-  author: string,
-  content: string,
-  description: string,
-  publishedAt: string,
-  source: SourceId,
-  title: string,
-  url: string,
-  urlToImage: string,
-};
-
-export type DataNews = {
-  status: string,
-  totalResults: number,
-  articles: Article[] | [],
-};
-
-export type DataDraw = {
-  category: Category,
-  country: Country,
-  description: string,
-  id: string,
-  language: Language,
-  name: string,
-  url: string,
+export interface RespOptions {
+  endpoint: string;
+  options?: Options;
 }
 
-export type DataSources = {
-  status: string,
-  sources: DataDraw[],
-};
+export interface Article {
+  author: string;
+  content: string;
+  description: string;
+  publishedAt: string;
+  source: SourceId;
+  title: string;
+  url: string;
+  urlToImage: string;
+}
+
+export interface DataNews {
+  status: string;
+  totalResults: number;
+  articles: Article[] | [];
+}
+
+export interface DataDraw {
+  category: Category;
+  country: Country;
+  description: string;
+  id: string;
+  language: Language;
+  name: string;
+  url: string;
+}
+
+export interface DataSources {
+  status: string;
+  sources: DataDraw[];
+}
 
 export interface Response {
   status: Status;
   sources: Source[];
 }
 
-export interface Request {
-  apiKey: string;
-  category?: Category;
-  language?: Language;
-  country?: Country;
-}
+// export interface Request {
+//   apiKey: string;
+//   category?: Category;
+//   language?: Language;
+//   country?: Country;
+// }
