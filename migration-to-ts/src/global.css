@@ -32,6 +32,18 @@ footer {
   justify-content: space-between;
 }
 
+.footer-git {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  margin-left: 0.5em;
+}
+
 .rslogo {
   width: 100px;
   height: 50px;
@@ -59,9 +71,22 @@ footer .copyright {
 footer .copyright a {
   color: #444;
 }
-footer .copyright a:hover {
+footer .copyright a:hover,
+.link:hover {
   color: #555;
 }
 footer .copyright:before {
   content: '©';
+}
+
+@media (max-width: 400px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+  }
+
+  .rslogo {
+    margin-top: 1em;
+  }
 }
