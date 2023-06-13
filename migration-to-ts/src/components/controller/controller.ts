@@ -35,10 +35,12 @@ class AppController extends AppLoader {
         }
         return;
       }
-
-      // if (target instanceof HTMLDivElement) {
         target = target.parentNode as HTMLDivElement;
-      // }
+        let container: HTMLDivElement | null = null;
+        if (newsContainer!.closest('.sources') instanceof HTMLDivElement) {
+          container = newsContainer!.closest('.sources');
+        }
+        container!.style.height = '140px';        
     }
   }
 }
