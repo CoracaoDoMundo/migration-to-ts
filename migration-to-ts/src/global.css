@@ -1,0 +1,92 @@
+body {
+  color: #fff;
+  background: #17181c;
+  font-family: sans-serif;
+}
+
+header {
+  padding: 10px 30px;
+}
+
+header h1 {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-content {
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-git {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  margin-left: 0.5em;
+}
+
+.rslogo {
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  background-image: url(./components/view/svg/logo_rs.svg);
+  background-repeat: no-repeat;
+  background-size: 85px;
+  transition: 0.3s;
+}
+
+.logo-link {
+  display: block;
+}
+
+.rslogo:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+footer .copyright {
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+}
+footer .copyright a {
+  color: #444;
+}
+footer .copyright a:hover,
+.link:hover {
+  color: #555;
+}
+footer .copyright:before {
+  content: '©';
+}
+
+@media (max-width: 400px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+  }
+
+  .rslogo {
+    margin-top: 1em;
+  }
+}

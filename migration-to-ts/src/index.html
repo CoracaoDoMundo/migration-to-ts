@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>NewsPortal</title>
+  </head>
+  <body>
+    <header>
+      <h1>News Portal</h1>
+    </header>
+    <main>
+      <div class="filter">
+        <input type="search" class="sources-filter" placeholder="News source..." />
+      </div>
+      <div class="sources buttons"></div>
+      <div class="news"></div>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <p class="copyright">2023 <a href="https://newsapi.org">NewsAPI</a></p>
+        <div class="footer-git">
+          <svg width="25px" height="25px" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+            <title>github</title>
+            <rect width="24" height="24" fill="none" />
+            <path
+              fill="#333"
+              d="M12,2A10,10,0,0,0,8.84,21.5c.5.08.66-.23.66-.5V19.31C6.73,19.91,6.14,18,6.14,18A2.69,2.69,0,0,0,5,16.5c-.91-.62.07-.6.07-.6a2.1,2.1,0,0,1,1.53,1,2.15,2.15,0,0,0,2.91.83,2.16,2.16,0,0,1,.63-1.34C8,16.17,5.62,15.31,5.62,11.5a3.87,3.87,0,0,1,1-2.71,3.58,3.58,0,0,1,.1-2.64s.84-.27,2.75,1a9.63,9.63,0,0,1,5,0c1.91-1.29,2.75-1,2.75-1a3.58,3.58,0,0,1,.1,2.64,3.87,3.87,0,0,1,1,2.71c0,3.82-2.34,4.66-4.57,4.91a2.39,2.39,0,0,1,.69,1.85V21c0,.27.16.59.67.5A10,10,0,0,0,12,2Z"
+            />
+          </svg>
+          <a href="https://github.com/CoracaoDoMundo" class="link">@CoracaoDoMundo</a>
+        </div>
+        <a href="https://rs.school" class="logo-link"><div class="rslogo"></div></a>
+      </div>
+    </footer>
+
+    <template id="sourceItemTemp">
+      <div class="source__item">
+        <span class="source__item-name"></span>
+      </div>
+    </template>
+
+    <template id="newsItemTemp">
+      <div class="news__item">
+        <div class="news__meta">
+          <div class="news__meta-photo"></div>
+          <ul class="news__meta-details">
+            <li class="news__meta-author"></li>
+            <li class="news__meta-date"></li>
+          </ul>
+        </div>
+        <div class="news__description">
+          <h2 class="news__description-title"></h2>
+          <h3 class="news__description-source"></h3>
+          <p class="news__description-content"></p>
+          <p class="news__read-more">
+            <a href="#">Read More</a>
+          </p>
+        </div>
+      </div>
+    </template>
+  </body>
+</html>

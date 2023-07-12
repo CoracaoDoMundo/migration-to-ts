@@ -1,0 +1,83 @@
+:root {
+  --height: min(480px, 63vh);
+}
+
+.sources {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 97%;
+  height: var(--height);
+  overflow: auto;
+  align-items: center;
+  font: 300 1em 'Fira Sans', sans-serif;
+}
+
+.source__item {
+  background: none;
+  border: 2px solid #30c5ff;
+  border-radius: 5px;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  color: #70d6ff;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.source__item:hover,
+.source__item:focus {
+  border-color: #f130ff;
+  color: #f130ff;
+  box-shadow: 0 0.5em 0.5em -0.4em #f130ff;
+  transform: scale(1.05);
+}
+
+.source__item-name {
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+@media (max-width: 1600px) {
+  :root {
+    --height: min(480px, 60vh);
+  }
+}
+
+@media (max-width: 750px) {
+  .sources {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --height: min(480px, 63vh);
+  }
+}
+
+@media (max-width: 400px) {
+  .source__item {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 390px) {
+  :root {
+    --height: min(480px, 64vh);
+  }
+}
+
+@media (max-width: 375px) {
+  :root {
+    --height: min(480px, 62vh);
+  }
+}
+
+@media (max-width: 320px) {
+  :root {
+    --height: min(200px, 63vh);
+  }
+}
